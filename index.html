@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thynk Unlimited</title>
+    <!-- Enlace a la hoja de estilos externa -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fuente Google Fonts (Inter para un look moderno y limpio) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- A. HEADER / NAV -->
+    <header class="main-header">
+        <div class="container nav-container">
+            <div class="logo">MNCROCKETRY</div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#content">Content</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+            </nav>
+            <!-- Botón de menú para móviles (controlado por CSS o JS simple si fuera necesario, aquí CSS puro) -->
+            <div class="menu-toggle" tabindex="0">☰</div>
+        </div>
+    </header>
+
+    <!-- B. SECCIÓN 1: HOME (Inicio) -->
+    <section id="home" class="section hero-section">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <h1>Cohetería experimental</h1>
+                <p>Consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                    enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                <a href="#content" class="btn btn-primary">Ver Más</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://placehold.co/600x400/222/FFF" alt="Imagen representativa de inicio">
+            </div>
+        </div>
+    </section>
+
+    <!-- C. SECCIÓN 2: ABOUT (Sobre Nosotros) -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h2 class="section-title">Sobre Nosotros</h2>
+            <div class="team-grid">
+                <!-- Miembro 1 -->
+                <div class="team-card">
+                    <img src="https://placehold.co/150/333/FFF" alt="Foto de miembro del equipo" class="profile-pic">
+                    <h3>Máximo Benjamín Ríos</h3>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequatUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                        ea commodo
+                        consequatUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                        ea commodo
+                        consequatUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                        ea commodo
+                        .</p>
+                </div>
+                <!-- Miembro 2 -->
+                <div class="team-card">
+                    <img src="https://placehold.co/150/333/FFF" alt="Foto de miembro del equipo" class="profile-pic">
+                    <h3>Antonella Lucía Di Martino</h3>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur.</p>
+                </div>
+                <!-- Miembro 3 -->
+                <div class="team-card">
+                    <img src="https://placehold.co/150/333/FFF" alt="Foto de miembro del equipo" class="profile-pic">
+                    <h3>Tiziano Benjamín Francetich</h3>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                        est laborum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- D. SECCIÓN 3: CONTENT (Servicios/Procesos) -->
+    <section id="content" class="section content-section">
+        <div class="container">
+            <h2 class="section-title">Contenido</h2>
+
+            <div class="content-row">
+                <div class="content-text">
+                    <h3>Nulla facilisi morbi</h3>
+                    <p>Mollis nunc sed id semper risus in hendrerit gravida rutrum. Est pellentesque elit ullamcorper
+                        dignissim cras tincidunt lobortis feugiat vivamus. Mattis molestie a iaculis at erat
+                        pellentesque.</p>
+                </div>
+                <div class="content-media">
+                    <img src="https://placehold.co/600x400/444/FFF" alt="Imagen de servicio 1">
+                </div>
+            </div>
+
+            <div class="content-row reverse">
+                <div class="content-text">
+                    <h3>Tristique senectus et</h3>
+                    <p>Netus et malesuada fames ac turpis egestas sed tempus. Eget aliquet nibh praesent tristique magna
+                        sit amet purus gravida. In est ante in nibh mauris cursus mattis molestie.</p>
+                </div>
+                <div class="content-media">
+                    <img src="https://placehold.co/600x400/444/FFF" alt="Imagen de servicio 2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- E. SECCIÓN 4: CONTACTS (Contacto) -->
+    <section id="contacts" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">Contáctanos!</h2>
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <ul>
+                        <li>
+                            <span class="icon">✉</span>
+                            <span>email@example.com</span>
+                        </li>
+                        <li>
+                            <span class="icon">📞</span>
+                            <span>+123 456 7890</span>
+                        </li>
+                        <li>
+                            <span class="icon">📍</span>
+                            <span>123 Lorem St, Ipsum City</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" action="https://formspree.io/f/xeeoyolv" method="POST">
+                        <!-- IMPORTANTE: Reemplaza "TU_ID_DE_FORMSPREE" con tu ID real de formspree.io -->
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="email@ejemplo.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tu mensaje..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 Thynk Unlimited. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

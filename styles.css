@@ -1,0 +1,486 @@
+/* =========================================
+   VARIABLES CSS 
+   ========================================= */
+:root {
+    /* Colores Principales */
+    --main-bg-color: #0d0d0d;
+    /* Fondo oscuro casi negro */
+    --secondary-bg-color: #1a1a1a;
+    /* Fondo para tarjetas o secciones alternas */
+    --text-color: #e0e0e0;
+    /* Texto claro/blanco */
+    --text-muted: #a0a0a0;
+    /* Texto secundario gris */
+
+    /* Acentos de Color */
+    --accent-color: #EDE226;
+    /* Rosa neón / Púrpura vibrante */
+    --accent-hover: #EDE226;
+    /* Color al pasar el mouse */
+
+    /* Tipografía */
+    --font-main: 'Inter', sans-serif;
+
+    /* Espaciado */
+    --container-width: 1200px;
+    --section-padding: 80px 0;
+}
+
+/* =========================================
+   RESET Y ESTILOS GLOBALES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--main-bg-color);
+    /* Para usar una imagen de fondo, descomenta la siguiente línea y pon la ruta de tu imagen: */
+    /* background-image: url('img/fondo.jpg'); */
+    /* background-size: cover; */
+    /* background-attachment: fixed; */
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Evitar scroll horizontal no deseado */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 8px;
+    /* Borde suave en imágenes */
+}
+
+/* Clases de Utilidad */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: var(--section-padding);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: #fff;
+    box-shadow: 0 4px 15px #EDE226;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px #EDE226;
+}
+
+/* =========================================
+   A. HEADER / NAV
+   ========================================= */
+.main-header {
+    background-color: rgba(13, 13, 13, 0.95);
+    /* Fondo semi-transparente */
+    backdrop-filter: blur(10px);
+    /* Efecto vidrio */
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a:hover {
+    color: var(--accent-color);
+}
+
+.menu-toggle {
+    display: none;
+    /* Oculto en escritorio */
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* =========================================
+   B. SECCIÓN 1: HOME (HERO)
+   ========================================= */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+    /* Para compensar el header fijo */
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    background: linear-gradient(to right, #fff, #999);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================
+   C. SECCIÓN 2: ABOUT (GRID)
+   ========================================= */
+.about-section {
+    background-color: var(--secondary-bg-color);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.team-card {
+    background-color: var(--main-bg-color);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+}
+
+.team-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.team-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   D. SECCIÓN 3: CONTENT
+   ========================================= */
+.content-section {
+    position: relative;
+}
+
+.content-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.content-row:last-child {
+    margin-bottom: 0;
+}
+
+.content-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.content-text {
+    flex: 1;
+}
+
+.content-text h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.content-text p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.content-media {
+    flex: 1;
+    position: relative;
+}
+
+.content-media img {
+    box-shadow: -20px 20px 0px rgba(209, 0, 209, 0.1);
+    /* Efecto visual diapositiva */
+    transition: all 0.3s ease;
+}
+
+.content-row.reverse .content-media img {
+    box-shadow: 20px 20px 0px rgba(209, 0, 209, 0.1);
+}
+
+/* =========================================
+   E. SECCIÓN 4: CONTACTS
+   ========================================= */
+.contact-section {
+    background-color: var(--secondary-bg-color);
+}
+
+.contact-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.contact-info .icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: var(--accent-color);
+}
+
+.contact-form-wrapper {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--main-bg-color);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #222;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: #fff;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.main-footer {
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* =========================================
+   RESPONSIVIDAD (MOBILE)
+   ========================================= */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* Navegación Responsive Simplificada */
+    .main-nav {
+        display: none;
+        /* Podría implementarse un toggle con checkbox hack o JS, por simplicidad CSS puro: stack normal o oculto */
+        /* Para este ejercicio, lo haremos visible en stack vertical simple al colapsar o simplificado */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--main-bg-color);
+        padding: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Mostrar menú al hacer focus en el toggle (truco CSS simple) */
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-toggle:focus+.main-nav,
+    .menu-toggle:active+.main-nav,
+    .main-nav:hover {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Hero Responsive */
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        margin: 0 auto 30px;
+    }
+
+    /* Content Layout Responsive */
+    .content-row,
+    .content-row.reverse {
+        flex-direction: column;
+    }
+
+    .content-media img {
+        box-shadow: none;
+        /* Simplificar en móvil */
+    }
+
+    /* Contact Responsive */
+    .contact-layout {
+        flex-direction: column;
+    }
+}
+
+/* =========================================
+   F. CAMBIO DE IDIOMA (BILINGÜE)
+   ========================================= */
+/* Por defecto (si html lang="es"), ocultamos inglés */
+:lang(es) .en {
+    display: none !important;
+}
+
+/* Si html lang="en", ocultamos español */
+:lang(en) .es {
+    display: none !important;
+}
+
+/* Estilo del botón de idioma */
+.lang-toggle {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+}
+
+.lang-toggle:hover {
+    background-color: var(--accent-color);
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    .lang-toggle {
+        margin: 10px auto;
+        display: block;
+    }
+}

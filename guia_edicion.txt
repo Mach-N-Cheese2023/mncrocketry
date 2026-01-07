@@ -1,0 +1,97 @@
+GUÍA DE EDICIÓN - WEBSITE THYNK UNLIMITED
+
+Esta guía explica cómo personalizar el código generado para adaptarlo a su contenido real. Siga los pasos a continuación.
+
+1. CÓMO CAMBIAR LOS COLORES
+------------------------------------------------------------
+Para cambiar el tema visual (colores de fondo, textos y acentos), abra el archivo 'styles.css'.
+Al principio del archivo encontrará la sección ":root".
+
+- --main-bg-color: Color de fondo principal (actualmente negro oscuro).
+- --text-color: Color del texto principal.
+- --accent-color: Color de énfasis (actualmente púrpura/rosa neón).
+
+Ejemplo: Si quiere cambiar el color acento a Azul, cambie el valor hexadecimal:
+  --accent-color: #0088ff;
+
+2. CÓMO CAMBIAR EL TEXTO
+------------------------------------------------------------
+Abra el archivo 'index.html'. Todo el contenido de texto está ahí.
+
+- Busque frases como "Lorem Ipsum" usando la función de búsqueda (Ctrl+F o Cmd+F).
+- Reemplace el texto entre las etiquetas (por ejemplo entre <p> y </p> o <h1> y </h1>) por su contenido real en español o inglés.
+
+3. CÓMO CAMBIAR LAS IMÁGENES
+------------------------------------------------------------
+Las imágenes actuales son marcadores de posición (placeholders). Para poner sus propias fotos:
+
+1. Guarde sus imágenes (formato .jpg o .png) en una carpeta, idealmente creando una carpeta llamada "img" junto a los archivos.
+2. En 'index.html', busque las etiquetas <img>.
+3. Cambie el atributo src="https://placehold.co/..." por la ruta de su imagen.
+
+Ejemplo:
+  ANTES: <img src="https://placehold.co/600x400/222/FFF" ...>
+  DESPUÉS: <img src="img/mi-foto-portada.jpg" ...>
+
+Recomendaciones de tamaño:
+- Hero (Inicio): 1200x800px aprox.
+- Perfiles (About): Cuadradas (ej. 400x400px).
+- Contenido: 800x600px aprox.
+
+4. CÓMO AGREGAR O QUITAR MIEMBROS DEL EQUIPO (ABOUT)
+------------------------------------------------------------
+En 'index.html', busque la sección con id="about".
+Dentro encontrará un contenedor con la clase "team-grid".
+Cada miembro es un bloque <div> con la clase "team-card".
+
+Para AGREGAR un miembro:
+1. Copie todo el bloque desde <div class="team-card"> hasta el </div> que lo cierra.
+2. Péguelo justo debajo del último miembro, antes del cierre de </div> de "team-grid".
+3. Edite la foto y el texto del nuevo bloque pegado.
+
+Para QUITAR un miembro:
+1. Seleccione el bloque completo <div class="team-card">...</div> del miembro que desea eliminar.
+2. Bórrelo.
+
+5. NOTAS TÉCNICAS
+------------------------------------------------------------
+- No necesita instalar nada. Solo abra index.html en su navegador (Chrome, Firefox, Edge) para ver los cambios.
+- El diseño es "Responsive", se adaptará automáticamente a celulares.
+- Si agrega un elemento de menú nuevo en el <header>, asegúrese de crear la sección correspondiente con el id correcto (ej. <section id="nuevo-id">).
+
+6. CONFIGURAR EL FORMULARIO DE CONTACTO (IMPORTANTE)
+------------------------------------------------------------
+Para que el formulario envíe emails de verdad a tu correo, usamos un servicio gratuito llamado Formspree.
+
+1. Ve a https://formspree.io/ y regístrate (es gratis).
+2. Crea un nuevo formulario ("New Form") y pon tu email donde quieres recibir los mensajes.
+3. Formspree te dará una URL única parecida a: https://formspree.io/f/xmqzowla
+4. Copia esa URL.
+5. Abre 'index.html', busca la etiqueta <form ...> (cerca del final).
+6. Reemplaza "TU_ID_DE_FORMSPREE" por el código que te dio la página (o pega la URL completa en el action).
+
+Ejemplo:
+  ANTES: action="https://formspree.io/f/TU_ID_DE_FORMSPREE"
+  DESPUÉS: action="https://formspree.io/f/mbqjqozk"
+
+¡Listo! Ahora cuando alguien llene el formulario, te llegará un correo.
+
+7. CÓMO CAMBIAR EL FONDO A UNA IMAGEN
+------------------------------------------------------------
+Si prefieres una foto de fondo en lugar del color negro:
+
+1. Guarda tu imagen grande (ej. 1920x1080px) en tu carpeta de imágenes.
+2. Abre 'styles.css'.
+3. Busca el bloque "body" (alrededor de la línea 32).
+4. Verás unas líneas comentadas (con /* ... */). Quítales los símbolos /* y */.
+5. Cambia 'img/fondo.jpg' por la ruta de tu imagen real.
+
+Ejemplo final:
+  body {
+      ...
+      /* background-color: var(--main-bg-color); */  <-- Puedes comentar o borrar el color
+      background-image: url('mi-imagen-fondo.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      ...
+  }
