@@ -385,33 +385,41 @@ img {
     }
 
     /* Navegación Responsive Simplificada */
-    .main-nav {
+   .main-nav {
         display: none;
-        /* Podría implementarse un toggle con checkbox hack o JS, por simplicidad CSS puro: stack normal o oculto */
-        /* Para este ejercicio, lo haremos visible en stack vertical simple al colapsar o simplificado */
         position: absolute;
-        top: 100%;
+        top: 100%; 
         left: 0;
         width: 100%;
-        background-color: var(--main-bg-color);
-        padding: 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: rgba(13, 13, 13, 0.98); 
+        padding: 40px 20px;
+        border-bottom: 2px solid var(--accent-color);
+        z-index: 9999; 
     }
 
-   /* Mostrar menú al hacer focus en el toggle (truco CSS simple) */
-    .menu-toggle {
-        display: block;
-    }
-
-    /* Toggle class for JS */
+   
     .main-nav.active {
-        display: block;
-    }
+        display: block !important; 
+        animation: fadeInDown 0.3s ease; 
+
     .main-nav ul {
         flex-direction: column;
         align-items: center;
-        gap: 15px;
+        gap: 25px;
     }
+
+    .menu-toggle {
+        display: block;
+        color: var(--accent-color); 
+        font-size: 2rem;
+        padding: 10px;
+    }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
     /* Hero Responsive */
     .hero-container {
