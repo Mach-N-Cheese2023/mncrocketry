@@ -398,17 +398,15 @@ img {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Mostrar menú al hacer focus en el toggle (truco CSS simple) */
+   /* Mostrar menú al hacer focus en el toggle (truco CSS simple) */
     .menu-toggle {
         display: block;
     }
 
-    .menu-toggle:focus+.main-nav,
-    .menu-toggle:active+.main-nav,
-    .main-nav:hover {
+    /* Toggle class for JS */
+    .main-nav.active {
         display: block;
     }
-
     .main-nav ul {
         flex-direction: column;
         align-items: center;
